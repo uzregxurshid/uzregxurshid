@@ -3,4 +3,4 @@
 
 ![Xurshids's github stats](https://github-readme-stats.vercel.app/api?username=uzregxurshid&theme=gotham&show_icons=true)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=uzregxurshid&hide=html&layout=compact&theme=gotham)]
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=uzregxurshid&hide=html&layout=compact&theme=gotham)
