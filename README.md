@@ -4,3 +4,4 @@
 ![Xurshids's github stats](https://github-readme-stats.vercel.app/api?username=uzregxurshid&theme=gotham&show_icons=true)
 
 
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=uzregxurshid&repo=uzregxurshid)](https://github.com/anuraghazra/github-readme-stats)
