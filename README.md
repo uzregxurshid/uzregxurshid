@@ -5,4 +5,4 @@
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=uzregxurshid&hide=html&layout=compact&theme=gotham)
 
-
+![Xurshids's github activity graph](https://activity-graph.herokuapp.com/graph?username=uzregxurshid&theme=react-dark)
