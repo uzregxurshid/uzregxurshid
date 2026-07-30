@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Terminal OS v2.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-green-crt">
+  <div class="monitor-casing">
+    <div class="monitor-bezel">
+      <div class="monitor-header-brand">
+        <span class="brand-text">CYBER-TERM 8086</span>
+        <div class="brand-badge">PRO v2.4</div>
+      </div>
+
+      <!-- CRT Screen Wrapper -->
+      <div id="crt-screen" class="crt-screen crt-effect scanlines-on flicker-on">
+        <div class="screen-glass">
+          <!-- Terminal Header Bar -->
+          <div class="terminal-bar">
+            <div class="window-controls">
+              <span class="control-btn close"></span>
+              <span class="control-btn minimize"></span>
+              <span class="control-btn maximize"></span>
+            </div>
+            <div class="window-title" id="window-title">guest@retro-os: ~ (zsh)</div>
+            <div class="window-time" id="clock-display">00:00:00</div>
+          </div>
+
+          <!-- Main Terminal Viewport -->
+          <div class="terminal-body" id="terminal-body">
+            <div id="output-history">
+              <!-- Welcome Banner rendered via JS -->
+            </div>
+
+            <!-- Input Line -->
+            <div class="input-line-container">
+              <span class="prompt-symbol" id="prompt-symbol">guest@retro-os:~$</span>
+              <div class="input-wrapper">
+                <input type="text" id="cli-input" autofocus autocomplete="off" spellcheck="false" aria-label="Terminal Command Input">
+                <span id="fake-cursor" class="blinking-cursor">&block;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas for Fullscreen Effects / Mini Games -->
+          <canvas id="matrix-canvas" class="fullscreen-canvas hidden"></canvas>
+          <canvas id="game-canvas" class="game-canvas hidden"></canvas>
+
+          <!-- Scanline overlay element -->
+          <div class="scanline-overlay"></div>
+          <div class="crt-glow-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Retro Hardware Controls Bar -->
+      <div class="hardware-panel">
+        <div class="led-group">
+          <div class="led-indicator power-led active" id="power-led">
+            <span class="led-bulb"></span>
+            <span class="led-label">PWR</span>
+          </div>
+          <div class="led-indicator disk-led" id="disk-led">
+            <span class="led-bulb"></span>
+            <span class="led-label">HDD</span>
+          </div>
+          <div class="led-indicator audio-led active" id="audio-led">
+            <span class="led-bulb"></span>
+            <span class="led-label">SND</span>
+          </div>
+        </div>
+
+        <div class="controls-group">
+          <button class="retro-btn" id="toggle-crt-btn" title="Toggle CRT Screen Curve Effect">CRT EFFECT</button>
+          <button class="retro-btn" id="toggle-scanlines-btn" title="Toggle Scanlines">SCANLINES</button>
+          <button class="retro-btn" id="toggle-audio-btn" title="Toggle Audio Sound FX">AUDIO: ON</button>
+          
+          <div class="theme-picker-wrapper">
+            <label for="theme-select" class="theme-label">THEME:</label>
+            <select id="theme-select" class="retro-select">
+              <option value="theme-green-crt">Matrix Green</option>
+              <option value="theme-amber-vt100">Amber VT100</option>
+              <option value="theme-cyberpunk">Cyberpunk Neon</option>
+              <option value="theme-dracula">Dracula Dark</option>
+              <option value="theme-synthwave">Synthwave '84</option>
+              <option value="theme-paper">Retro Paper</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

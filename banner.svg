@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 180" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=VT323&amp;family=Share+Tech+Mono&amp;display=swap');
+      
+      .banner-bg { fill: #050b07; stroke: #123018; stroke-width: 2px; rx: 12px; }
+      .title-main { font-family: 'VT323', monospace; font-size: 54px; fill: #00ff66; letter-spacing: 4px; }
+      .sub-title  { font-family: 'Share Tech Mono', monospace; font-size: 18px; fill: #00e5ff; letter-spacing: 2px; }
+      .badge-text { font-family: 'Share Tech Mono', monospace; font-size: 12px; fill: #ffdf5d; }
+      .grid-line  { stroke: #0f2414; stroke-width: 1px; }
+
+      .glow-filter {
+        filter: drop-shadow(0px 0px 8px rgba(0, 255, 102, 0.6));
+      }
+    </style>
+  </defs>
+
+  <rect x="10" y="10" width="830" height="160" class="banner-bg" />
+
+  <!-- Background Grid Effect -->
+  <line x1="10" y1="50" x2="840" y2="50" class="grid-line" />
+  <line x1="10" y1="90" x2="840" y2="90" class="grid-line" />
+  <line x1="10" y1="130" x2="840" y2="130" class="grid-line" />
+  <line x1="150" y1="10" x2="150" y2="170" class="grid-line" />
+  <line x1="350" y1="10" x2="350" y2="170" class="grid-line" />
+  <line x1="550" y1="10" x2="550" y2="170" class="grid-line" />
+  <line x1="750" y1="10" x2="750" y2="170" class="grid-line" />
+
+  <!-- Banner Content -->
+  <g transform="translate(425, 75)" text-anchor="middle">
+    <text class="title-main glow-filter">RETRO INTERACTIVE TERMINAL</text>
+    <text y="35" class="sub-title">> FULL-STACK &amp; SYSTEMS ARCHITECT PROFILE &lt;</text>
+  </g>
+
+  <!-- Corner Badges -->
+  <rect x="30" y="25" width="100" height="24" rx="4" fill="#0d1f11" stroke="#00ff66" stroke-width="1" />
+  <text x="80" y="41" text-anchor="middle" class="badge-text">STATUS: ONLINE</text>
+
+  <rect x="720" y="25" width="100" height="24" rx="4" fill="#0d1f11" stroke="#00e5ff" stroke-width="1" />
+  <text x="770" y="41" text-anchor="middle" class="badge-text" fill="#00e5ff">SYSTEM v2.4</text>
+</svg>

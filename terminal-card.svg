@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="100%">
+  <defs>
+    <!-- Fonts Import -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&amp;family=VT323&amp;display=swap');
+
+      .bg-window { fill: #070f09; stroke: #1f3b25; stroke-width: 2px; rx: 10px; }
+      .bar-header { fill: #0a160d; }
+      .text-title { font-family: 'VT323', monospace; font-size: 18px; fill: #1f7a39; letter-spacing: 1px; }
+      .text-code  { font-family: 'Fira Code', monospace; font-size: 14px; fill: #33ff66; }
+      .text-cyan  { fill: #00e5ff; }
+      .text-yellow{ fill: #ffdf5d; }
+      .text-dim   { fill: #1f7a39; }
+      .text-prompt{ fill: #00ff66; font-weight: bold; }
+
+      /* Typewriter Animation Keyframes */
+      .typewriter-line1 {
+        clip-path: inset(0 100% 0 0);
+        animation: typing 2.5s steps(40, end) 0.5s forwards;
+      }
+      .typewriter-line2 {
+        clip-path: inset(0 100% 0 0);
+        animation: typing 2.5s steps(40, end) 3.2s forwards;
+      }
+      .typewriter-line3 {
+        clip-path: inset(0 100% 0 0);
+        animation: typing 2.5s steps(40, end) 5.8s forwards;
+      }
+
+      @keyframes typing {
+        from { clip-path: inset(0 100% 0 0); }
+        to { clip-path: inset(0 0 0 0); }
+      }
+
+      .blinking-cursor {
+        animation: blink 0.8s infinite;
+        fill: #00ff66;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      /* CRT Scanline effect overlay */
+      .scanlines {
+        fill: url(#scanline-pattern);
+        opacity: 0.25;
+        pointer-events: none;
+      }
+    </style>
+
+    <!-- Scanline Pattern -->
+    <pattern id="scanline-pattern" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="100" y2="0" stroke="#000000" stroke-width="2" />
+    </pattern>
+
+    <!-- Glow Filter -->
+    <filter id="crt-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main Window Frame -->
+  <rect x="10" y="10" width="780" height="400" class="bg-window" filter="url(#crt-glow)" />
+
+  <!-- Header Window Bar -->
+  <path d="M 10 20 A 10 10 0 0 1 20 10 L 780 10 A 10 10 0 0 1 790 20 L 790 44 L 10 44 Z" class="bar-header" />
+  <line x1="10" y1="44" x2="790" y2="44" stroke="#1f3b25" stroke-width="1" />
+
+  <!-- Window Controls Buttons -->
+  <circle cx="32" cy="27" r="6" fill="#ff5f56" />
+  <circle cx="52" cy="27" r="6" fill="#ffbd2e" />
+  <circle cx="72" cy="27" r="6" fill="#27c93f" />
+
+  <!-- Title Text -->
+  <text x="400" y="32" text-anchor="middle" class="text-title">guest@retro-os: ~ (zsh) — 80x24</text>
+
+  <!-- Terminal Content Body -->
+  <g filter="url(#crt-glow)">
+    <!-- Welcome Header -->
+    <text x="35" y="80" class="text-code text-yellow">=== CYBER-TERM OS v2.4 (INTERACTIVE READ-ONLY DEMO) ===</text>
+    <text x="35" y="105" class="text-code text-dim">Type 'help' to list commands or view profile details below.</text>
+
+    <!-- Command 1 Output -->
+    <g transform="translate(35, 140)">
+      <text x="0" y="0" class="text-code text-prompt">guest@retro-os:~$</text>
+      <text x="160" y="0" class="text-code typewriter-line1">whoami --profile</text>
+    </g>
+    <g transform="translate(35, 168)" class="typewriter-line1">
+      <text x="0" y="0" class="text-code text-cyan">&gt; ROLE:</text>
+      <text x="80" y="0" class="text-code">Full-Stack Engineer &amp; Systems Architect</text>
+      <text x="0" y="24" class="text-code text-cyan">&gt; STACK:</text>
+      <text x="80" y="24" class="text-code">TypeScript | React | Python | Go | Docker | Linux</text>
+    </g>
+
+    <!-- Command 2 Output -->
+    <g transform="translate(35, 235)">
+      <text x="0" y="0" class="text-code text-prompt">guest@retro-os:~$</text>
+      <text x="160" y="0" class="text-code typewriter-line2">cat bio.txt</text>
+    </g>
+    <g transform="translate(35, 263)" class="typewriter-line2">
+      <text x="0" y="0" class="text-code">Building fast web apps, interactive tools, &amp; clean APIs.</text>
+      <text x="0" y="24" class="text-code text-yellow">Status: Available for open-source &amp; core engineering projects.</text>
+    </g>
+
+    <!-- Command 3 Active Prompt -->
+    <g transform="translate(35, 330)">
+      <text x="0" y="0" class="text-code text-prompt">guest@retro-os:~$</text>
+      <text x="160" y="0" class="text-code typewriter-line3">echo "Welcome to my GitHub profile!"</text>
+      <rect x="525" y="-14" width="10" height="18" class="blinking-cursor" />
+    </g>
+  </g>
+
+  <!-- Scanlines Overlay -->
+  <rect x="10" y="10" width="780" height="400" class="scanlines" rx="10" />
+</svg>
